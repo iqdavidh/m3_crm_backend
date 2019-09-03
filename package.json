@@ -1,0 +1,49 @@
+{
+  "name": "CRM_backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node  src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "nyc mocha test/test_unit/**",
+    "test_api": "mocha --timeout 20000 test/test_api/**/*.js",
+    "test_api_root": "mocha --timeout 20000 test/test_api/test_root.js",
+    "test_unit": "mocha test/test_unit/**/*.js",
+    "test_unit_basic": "mocha test/test_unit/basic_test.js",
+    "report-coverage": "nyc report --reporter=text-lcov >  coverage.lcov && codecov"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.2.10"
+  },
+  "devDependencies": {
+    "codecov": "^3.5.0",
+    "mocha": "^6.2.0",
+    "node-mocks-http": "^1.7.6",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "supertest": "^4.0.2"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "**/*.spec.js"
+    ]
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*"
+    ],
+    "delay": "2500"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
