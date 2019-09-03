@@ -19,9 +19,8 @@ describe('ServerConfig', function() {
 		assert(ServerConfig.mongo.user !== undefined, "No esta moongo.user");
 		assert(ServerConfig.mongo.pass !== undefined, "No esta moongo.pass");
 
-		assert(ServerConfig.back.port !== undefined, "No esta back.port");
-
 		if(ServerConfig.tipoServer==='development'){
+			assert(ServerConfig.back.port !== undefined, "No esta back.port");
 			assert(ServerConfig.back.url !== undefined, "No esta back.url ");
 		}
 
