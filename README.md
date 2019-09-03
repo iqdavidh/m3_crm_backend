@@ -2,7 +2,7 @@
 
 
 
-[![Build Status](https://travis-ci.org/iqdavidh/base_back_site.svg?branch=master)](https://travis-ci.org/iqdavidh/base_back_site)  [![codecov](https://codecov.io/gh/iqdavidh/base_back_site/branch/master/graph/badge.svg)](https://codecov.io/gh/iqdavidh/base_back_site)
+[![Build Status](https://travis-ci.org/iqdavidh/m3_crm_backend.svg?branch=master)](https://travis-ci.org/iqdavidh/base_back_site)  [![codecov](https://codecov.io/gh/iqdavidh/m3_crm_backend/branch/master/graph/badge.svg)](https://codecov.io/gh/iqdavidh/m3_crm_backend)
 
 
 #### Backend
