@@ -2,7 +2,7 @@ const BuilderJsonResponse = require("../lib/BuilderJsonResponse");
 const ServerConfig = require("../ServerConfig");
 const AutService = require("../service/aut/AutService");
 
-const fnGetToken = require("../pro/jwt/fnGetToken");
+const EncodeObject = require("../pro/jwt/EncodeObject");
 
 const LoginConEmailPassAction = async (req, res, next) => {
 
@@ -19,7 +19,7 @@ const LoginConEmailPassAction = async (req, res, next) => {
 
 
   try {
-    const token = await fnGetToken(dataAutenticacion.internal);
+    const token =  EncodeObject(dataAutenticacion.internal);
     const dataRespuesta = {
       data: dataAutenticacion.public,
       token: token
