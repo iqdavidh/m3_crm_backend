@@ -28,7 +28,7 @@ const LoginConEmailPassAction = async (req, res, next) => {
     BuilderJsonResponse.Success(res, dataRespuesta);
 
   } catch (e) {
-    BuilderJsonResponse.Success(res, dataRespuesta);
+    BuilderJsonResponse.Error(e);
   }
 
 

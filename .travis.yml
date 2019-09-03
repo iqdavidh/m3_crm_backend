@@ -2,18 +2,12 @@ language:
   node_js
 node_js:
   - "stable"
+services:
+  - mongodb
+before_script:
+  - mongo mydb_test --eval 'db.createUser({user:"davidh",pwd:"lalocal",roles:["readWrite"]});'
 script:
   - npm run test
 after_script:
   - npm run report-coverage
   - codecov
-services:
-   - mongodb
-env:
-  - NODE_ENV=development
-  - BACK_PORT=3000
-  - URL_BACK=http://localhost:3000
-  - MONGO_URL_ROOT_CX=mongodb://localhost:27017
-  - MONGO_USER=davidh
-  - MONGO_PASS=lalocal
-  - JWT_SECRET=unsaltsegurode16characters
