@@ -11,7 +11,7 @@ const ServerConfig = {
   },
   back: {
     port: process.env.BACK_PORT,
-    url: process.env.URL_BACK
+    url: process.env.BACK_URL
   },
   jwtSecret:process.env.JWT_SECRET
 };

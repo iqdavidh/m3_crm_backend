@@ -4,7 +4,7 @@ node_js:
   - "stable"
 services:
   - mongodb
-before_script:
+xbefore_script:
   - mongo mydb_test --eval 'db.createUser({user:"davidh",pwd:"lalocal",roles:["readWrite"]});'
 script:
   - npm run test
