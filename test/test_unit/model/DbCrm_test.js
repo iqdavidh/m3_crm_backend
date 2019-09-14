@@ -17,7 +17,7 @@ describe('DbCrm', function () {
 
 
   it('tiene los modelos', function () {
-    const listaModelos = ['cx', 'Usuario'];
+    const listaModelos = ['cx', 'ModelUsuario'];
     listaModelos.forEach(m => {
       const isValid = LibValidacion.getIsNotNullOrEmpty(DbCrm[m]);
       assert(isValid, `falta la popiedad ${m}`);

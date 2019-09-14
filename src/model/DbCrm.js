@@ -29,10 +29,10 @@ const cx = mongoose.connect(url, opcionesMongoose)
     });
 
 
- const Usuario = require("./Usuario");
+ const ModelUsuario = require("./Usuario/ModelUsuario");
 
 
 module.exports = {
   cx,
-  Usuario
+  ModelUsuario: ModelUsuario
 };

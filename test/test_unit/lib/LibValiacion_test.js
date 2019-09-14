@@ -101,3 +101,25 @@ describe('getIsNotNullOrEmpty - happyPath', function(){
 });
 
 
+describe('validarModelHasProp',function(){
+
+  it('validacion ok - si estan los campos', function(){
+    const model={a:1,b:'x'};
+
+    let isValid=LibValidacion.validarModelHasProp(model,['a','b']);
+    assert(isValid,'falta validar que trae propieades');
+
+
+  });
+
+  it('validacion error si falta campo o es null', function(){
+    const model={a:1,b:'x'};
+    const modelError ={};
+
+    let isValid=LibValidacion.validarModelHasProp(model,['a','b','c'], modelError);
+    assert(isValid===false,'esperamos que no pase la validacion si falta un campo');
+
+    assert(modelError.c===true,"esperamos qeu el modelerror traia campo c")
+
+  });
+});

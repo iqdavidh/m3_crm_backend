@@ -29,6 +29,28 @@ const LibValidacion = {
     }
 
     return valor !== null && valor !== undefined;
+  },
+
+  /*
+  indicar si un modelo tiene las propieadeds indicadas
+  return bool
+  */
+  validarModelHasProp:(model, listaProp, modelError)=>{
+
+    let isValid=true;
+
+    listaProp.forEach(p=>{
+      let isPropValid=LibValidacion.getIsNotNullOrEmpty(model[p]);
+
+      if(!isPropValid){
+        isValid=false;
+        if(modelError){
+          modelError[p]=true;
+        }
+      }
+    });
+
+    return isValid;
   }
 
 

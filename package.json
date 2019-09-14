@@ -3,14 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "t": "mocha --timeout 20000  --exit test/test_unit/model/ModelUsuario_test.js",
     "start": "node  src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "nyc mocha test/test_unit/**",
+    "test": "nyc mocha --timeout 20000 test/test_unit/**",
     "test_api": "mocha --timeout 20000 test/test_api/**/*.js",
     "test_api_root": "mocha --timeout 20000 test/test_api/test_root.js",
     "test_unit": "mocha test/test_unit/**/*.js",
     "test_unit_basic": "mocha test/test_unit/basic_test.js",
-    "report-coverage": "nyc report --reporter=text-lcov >  coverage.lcov && codecov"
+    "report-coverage": "nyc report --reporter=text-lcov >  coverage.lcov && codecov",
+    "dataseed": "mongoimport --db crm --collection usuarios --file z_dev/data/usuarios.json --jsonArray"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -54,4 +54,16 @@ describe('LibTexto', function () {
 
 
   });
+
+
+  /*CodeFecha e suna librearia auxiliar para tener un ts como texto*/
+
+  describe('getCodeFecha', function () {
+
+    it('genera el codigo', function () {
+      let texto = LibTexto.getCodeFecha();
+      assert(typeof texto === "string" && texto.length > 2, 'No se genero');
+    })
+
+  });
 });
