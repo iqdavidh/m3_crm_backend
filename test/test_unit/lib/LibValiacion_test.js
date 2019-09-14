@@ -59,3 +59,45 @@ describe('getDataClean', function () {
   });
 
 });
+
+
+describe('getIsNotNullOrEmpty - happyPath', function(){
+
+  it('true si hay valor string', function(){
+    const isValid=LibValidacion.getIsNotNullOrEmpty('x');
+    assert(isValid,'deberia ser valido al pasar string')
+  });
+
+  it('true si hay valor num', function(){
+    const isValid=LibValidacion.getIsNotNullOrEmpty(5);
+    assert(isValid,'deberia ser valido al pasar string')
+  });
+
+  it('true si hay valor object', function(){
+    const isValid=LibValidacion.getIsNotNullOrEmpty({});
+    assert(isValid,'deberia ser valido al pasar {}')
+  });
+
+  it('true si hay valor object', function(){
+    const isValid=LibValidacion.getIsNotNullOrEmpty(()=>{});
+    assert(isValid,'deberia ser valido al function')
+  });
+
+
+  it('false - string vacio', function(){
+    const isValid=LibValidacion.getIsNotNullOrEmpty('');
+    assert(isValid===false,'deberia ser false el string vacio')
+  });
+
+  it('false - null', function(){
+    const isValid=LibValidacion.getIsNotNullOrEmpty(null);
+    assert(isValid===false,'deberia ser false al pasar null')
+  });
+
+  it('false - null', function(){
+    const isValid=LibValidacion.getIsNotNullOrEmpty(undefined);
+    assert(isValid===false,'deberia ser false al pasar undefined')
+  });
+});
+
+
