@@ -34,6 +34,7 @@ UsuarioSchema.methods.getDataApi = function () {
       roles: this.roles
     },
     public:{
+      nombre:this.nombre,
       email:this.email,
       roles: this.roles
     }

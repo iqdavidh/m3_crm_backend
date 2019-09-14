@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "t": "mocha --timeout 20000  --exit test/test_unit/model/ModelUsuario_test.js",
+    "t": "mocha --timeout 20000  --exit test/test_unit/controllerApi/login/ApiLoginEmailPass_test.js",
     "start": "node  src/app.js",
     "dev": "nodemon src/app.js",
     "test": "nyc mocha --timeout 20000 test/test_unit/**",

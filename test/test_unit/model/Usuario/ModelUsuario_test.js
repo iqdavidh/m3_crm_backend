@@ -28,11 +28,12 @@ describe('Usuario', function () {
 
   });
 
+
+
+
   it('encriptar pass al guardar raw', async function () {
 
-
     const u = await DbCrm.ModelUsuario.findOne(filter);
-
     const d = u.getDataApi();
 
     assert(typeof d === "object", "dataApi incorrecto");
@@ -47,7 +48,7 @@ describe('Usuario', function () {
     assert(isDataSecretOK, "faltan propieades secrert de dataapi - " + JSON.stringify(d.secret));
 
 
-    const isDataPublicOK = LibValidacion.validarModelHasProp(d.public, ['email', 'roles']);
+    const isDataPublicOK = LibValidacion.validarModelHasProp(d.public, ['nombre','email', 'roles']);
     assert(isDataPublicOK, "faltan propieades publico de dataapi - " + JSON.stringify(d.public));
 
 
