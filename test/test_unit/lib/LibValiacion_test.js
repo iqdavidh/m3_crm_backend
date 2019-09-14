@@ -106,9 +106,12 @@ describe('validarModelHasProp',function(){
   it('validacion ok - si estan los campos', function(){
     const model={a:1,b:'x'};
 
-    let isValid=LibValidacion.validarModelHasProp(model,['a','b']);
+    const modelError=undefined;
+
+    let isValid=LibValidacion.validarModelHasProp(model,['a','b'], modelError);
     assert(isValid,'falta validar que trae propieades');
 
+    assert(modelError===undefined, "al pasar undefined el modelError no deberia cambiar")
 
   });
 
