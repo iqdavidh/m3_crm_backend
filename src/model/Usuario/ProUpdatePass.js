@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const DbCrm = require("../DbCrm");
 
 const ProUpdatePass = async (usuario, newPassRow) => {
 
@@ -6,7 +7,7 @@ const ProUpdatePass = async (usuario, newPassRow) => {
 
   const filter={'_id': usuario._id};
 
-  await DbCrm.ModelUsuario.updateOne(filter,{password: hash});
+  await DbCrm.ModelUsuario.findOneAndUpdate(filter,{$set:{password: hash}});
 
 };
 

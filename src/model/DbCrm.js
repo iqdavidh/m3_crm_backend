@@ -18,7 +18,9 @@ url = url + '/crm';
 
 
 mongoose.Promise = global.Promise;
+
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 
 const cx = mongoose.connect(url, opcionesMongoose)
     .then(x => {
