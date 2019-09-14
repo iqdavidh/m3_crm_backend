@@ -1,12 +1,18 @@
 const BuilderJsonResponse = require("../../lib/BuilderJsonResponse");
 const DbCrm = require("../../model/DbCrm");
 const EncodeObject = require('../../../src/pro/jwt/EncodeObject');
+const LibValidacion = require("../../lib/LibValidacion");
 
 const ApiLoginEmailPass = async (req, res) => {
 
-  const email = req.body.email;
-  const password = req.body.password;
+  const email = req.body.email || null;
+  const password = req.body.password || null;
 
+
+  if(! LibValidacion.getIsNotNullOrEmpty(email) || ! LibValidacion.getIsNotNullOrEmpty(password) ){
+    BuilderJsonResponse.Error(res, 'Datos incorrectos');
+    return;
+  }
 
   const usuario = await DbCrm.ModelUsuario.findOne({email});
 
