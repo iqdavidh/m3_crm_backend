@@ -7,7 +7,7 @@ describe('AutService', function () {
 
   it('getDataFromUserPass OK', async function () {
 
-    const dataAutenticacion = await AutService.getDataFromUserPass('admin', 'pass');
+    const dataAutenticacion = await AutService.getDataFromEmailAndPass('admin', 'pass');
 
     assert(dataAutenticacion.success === true, "No se resolvio la autenticacion");
     assert(dataAutenticacion.data.public, "No hay data public");
@@ -22,7 +22,7 @@ describe('AutService', function () {
 
   it('getDataFromUserPass Error - Datos Incorrectos', async function () {
 
-    const dataAutenticacion = await AutService.getDataFromUserPass('un usuario que no existe', 'o password incorrecto');
+    const dataAutenticacion = await AutService.getDataFromEmailAndPass('un usuario que no existe', 'o password incorrecto');
 
     assert(dataAutenticacion.success === false, "se esperaba false");
     assert(dataAutenticacion.data === null, "data deberia ser null");

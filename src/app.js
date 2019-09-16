@@ -1,17 +1,16 @@
 const express = require('express');
+
 const bodyParser = require('body-parser');
 
+const routerLogin = require("./controllerApi/login/routerLogin");
+const routerApi = require("./controllerApi/routerApi");
 
 const RootAction = require("./controller/RootAction");
 const NotFoundAction = require("./controller/NotFoundAction");
 const ErrorAction = require("./controller/ErrorAction");
 
 
-const routerLogin = require("./controllerLogin/routerLogin");
-const routerApi = require("./controllerApi/routerApi");
-
-
-//const DBMongo = require("./model/DbMongo"); /*<-- solo hace conexion con la base de datos */
+DbCrm = require("./model/DbCrm"); /*<-- solo hace conexion con la base de datos */
 
 
 const app = express();

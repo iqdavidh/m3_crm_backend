@@ -19,6 +19,7 @@ const BuilderJsonResponse = {
 			success: false,
 			msg: error
 		};
+
 		res.status(code).json(data);
 	}
 

@@ -31,6 +31,7 @@ UsuarioSchema.methods.getDataApi = function () {
   return {
     secret:{
       _id: this._id,
+      nombre:this.nombre,
       roles: this.roles
     },
     public:{

@@ -5,26 +5,28 @@ const LibValidacion = require("../../lib/LibValidacion");
 
 const ApiLoginEmailPass = async (req, res) => {
 
+  console.log("reqbody", req.body);
+
   const email = req.body.email || null;
   const password = req.body.password || null;
 
 
   if(! LibValidacion.getIsNotNullOrEmpty(email) || ! LibValidacion.getIsNotNullOrEmpty(password) ){
-    BuilderJsonResponse.Error(res, 'Datos incorrectos');
+    BuilderJsonResponse.Error(res, 'Datos incorrectos',401);
     return;
   }
 
   const usuario = await DbCrm.ModelUsuario.findOne({email});
 
   if (!usuario) {
-    BuilderJsonResponse.Error(res, 'Usuario no encontrado');
+    BuilderJsonResponse.Error(res, 'Usuario no encontrado',401);
     return;
   }
 
   const isPassValid = usuario.validarPasswordRaw(password);
 
   if (!isPassValid) {
-    BuilderJsonResponse.Error(res, 'Datos incorrectos');
+    BuilderJsonResponse.Error(res, 'Datos incorrectos',401);
     return;
   }
 
