@@ -30,7 +30,6 @@ const ApiLoginEmailPass = async (req, res) => {
     return;
   }
 
-
   const dataApi = usuario.getDataApi();
 
   const token = EncodeObject(dataApi.secret);
