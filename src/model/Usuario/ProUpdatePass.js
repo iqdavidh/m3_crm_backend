@@ -3,11 +3,13 @@ const DbCrm = require("../DbCrm");
 
 const ProUpdatePass = async (usuario, newPassRow) => {
 
-  const hash = bcrypt.hashSync(newPassRow, 2); /*modo desarroollo solo 2 iteracioens salt*/
+  const hash = bcrypt.hashSync(newPassRow, 1); /*modo desarroollo solo 2 iteracioens salt*/
 
-  const filter={'_id': usuario._id};
+  const filter={'_id': usuario._id.toString()};
 
-  await DbCrm.ModelUsuario.findOneAndUpdate(filter,{$set:{password: hash}});
+  let respuesta= await DbCrm.ModelUsuario.findOneAndUpdate(filter,{password: hash});
+
+  return;
 
 };
 

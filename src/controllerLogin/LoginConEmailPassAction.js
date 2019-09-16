@@ -1,5 +1,4 @@
 const BuilderJsonResponse = require("../lib/BuilderJsonResponse");
-const ServerConfig = require("../ServerConfig");
 const AutService = require("../service/aut/AutService");
 
 const EncodeObject = require("../pro/jwt/EncodeObject");

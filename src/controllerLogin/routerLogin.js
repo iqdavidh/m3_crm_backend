@@ -4,7 +4,7 @@ const routerLogin = express.Router();
 const LoginConEmailPassAction= require("./LoginConEmailPassAction");
 
 
-routerLogin.post('/email_and_pass', LoginConEmailPassAction);
+routerLogin.post('/login', LoginConEmailPassAction);
 
 
 module.exports = routerLogin;

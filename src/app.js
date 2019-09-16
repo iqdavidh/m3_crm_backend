@@ -7,6 +7,7 @@ const NotFoundAction = require("./controller/NotFoundAction");
 const ErrorAction = require("./controller/ErrorAction");
 
 
+const routerLogin = require("./controllerLogin/routerLogin");
 const routerApi = require("./controllerApi/routerApi");
 
 
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get("/", RootAction);
 
+app.use("/api", routerLogin);
 app.use("/api", routerApi);
 
 app.use(NotFoundAction);

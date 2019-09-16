@@ -9,6 +9,7 @@ const DbCrm = require("../../../../src/model/DbCrm");
 const ProUpdatePass = require('../../../../src/model/Usuario/ProUpdatePass');
 
 describe('ProUpdatePass', function () {
+
   it('ok', async function () {
 
     const filter = {email: 'david@productividadti.com.mx'};
@@ -22,7 +23,7 @@ describe('ProUpdatePass', function () {
     ProUpdatePass(u, 'lalocal');
 
     let u2 = await DbCrm.ModelUsuario.findOne(filter);
-    assert(u2.password !== '', "Deberia ser true - test dummy");
+    assert(u2.password !== '', "El passsword es incorrecto :"+ u2.password);
 
 
 

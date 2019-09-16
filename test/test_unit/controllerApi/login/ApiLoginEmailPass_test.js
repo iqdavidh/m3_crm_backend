@@ -17,7 +17,7 @@ describe('ApiLoginEmailPass', async function () {
 
     const request = httpMocks.createRequest({
       method: 'POST',
-      url: '/api/loginemailpass',
+      url: '/api/login',
       body: bodyLogin
     });
 
@@ -49,7 +49,7 @@ describe('ApiLoginEmailPass', async function () {
 
     const request = httpMocks.createRequest({
       method: 'POST',
-      url: '/api/loginemailpass',
+      url: '/api/login',
       body: bodyLogin
     });
 
