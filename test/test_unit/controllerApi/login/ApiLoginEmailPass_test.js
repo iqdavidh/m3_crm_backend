@@ -33,12 +33,8 @@ describe('ApiLoginEmailPass', async function () {
     assert(data.msg === "");
     assert(200 === response.statusCode, "El estatus no es 200");
 
-
     assert(typeof data.data.token === "string" || data.data.token.length>0, "No hay token");
     assert(typeof data.data.public === "object" || data.data.public.nombre.length>0, "No hay token");
-
-
-
 
   });
 
