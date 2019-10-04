@@ -11,7 +11,7 @@ let listaCamposPermitirUpdate = [
 const UsuarioUpdateAction = async (req, res) => {
 
   const idUsuarioSession = req.idUsuario;
-  const idUsuarioActualizado = req.params.idUsuario;
+  const idUsuarioActualizado = req.params.idUsuarioActualizado;
 
 
   let dataRaw = req.body;

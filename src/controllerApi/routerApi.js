@@ -22,7 +22,7 @@ routerApi.post('/cliente_insert', ClienteInsertAction);
 routerApi.get('/cliente/:idCliente', ClienteAllDataAction);
 routerApi.post('/seguimiento_insert', SeguimientoInsertAction);
 routerApi.get('/usuario_index', UsuarioIndexAction);
-routerApi.post('/usuario_update/:idUsuario', UsuarioUpdateAction);
+routerApi.post('/usuario_update/:idUsuarioActualizado', UsuarioUpdateAction);
 routerApi.post('/usuario_insert', UsuarioInsertAction);
 
 

@@ -15,7 +15,7 @@ describe('UsuarioInsertAction ok', function () {
       method: 'POST'
     });
 
-    request.params.idUsuario = DataTest.id_usuario;
+    request.params.idUsuarioActualizado = DataTest.id_usuario;
 
     request.idUsuario = DataTest.id_usuario; //<-- el usaurio de la session
     request.usuario={

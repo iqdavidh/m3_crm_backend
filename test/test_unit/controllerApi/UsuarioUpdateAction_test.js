@@ -9,18 +9,18 @@ describe('UsuarioUpdateAction ok', function () {
 
   this.timeout(5000);
 
-  it("POST / obtener la lista", async function () {
+  it("POST / OK", async function () {
 
     const request = httpMocks.createRequest({
       method: 'POST'
     });
 
-    request.params.idUsuario = DataTest.id_usuario;
+    request.params.idUsuarioActualizado = DataTest.id_usuario_secundario;
     request.idUsuario = DataTest.id_usuario; //<-- el usaurio de la session
 
     request.body = {
-      nombre: "david.huerta",
-      nick: 'dhs'
+      nombre: "xxxx",
+      nick: 'zzzz'
     };
 
     const response = httpMocks.createResponse();
