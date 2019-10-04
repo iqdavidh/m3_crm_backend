@@ -32,13 +32,15 @@ UsuarioSchema.methods.getDataApi = function () {
   return {
     secret:{
       _id: this._id,
+      nick:this.nick,
       nombre:this.nombre,
-      roles: this.roles
+      is_admin: this.is_admin
     },
     public:{
       nombre:this.nombre,
+      nick:this.nick,
       email:this.email,
-      roles: this.roles
+      is_admin: this.is_admin
     }
 
   };

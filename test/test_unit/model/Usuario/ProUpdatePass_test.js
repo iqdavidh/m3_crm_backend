@@ -10,14 +10,16 @@ const ProUpdatePass = require('../../../../src/model/Usuario/ProUpdatePass');
 
 describe('ProUpdatePass', function () {
 
+  this.timeout(5000);
+
   it('ok', async function () {
 
     const filter = {email: 'david@productividadti.com.mx'};
 
     //reset el password a string vacio
-    await DbCrm.ModelUsuario.findOneAndUpdate(filter, {password: ''});
+    // await DbCrm.ModelUsuario.findOneAndUpdate(filter, {password: ''});
 
-    let u = await DbCrm.ModelUsuario.findOne(filter);
+     let u = await DbCrm.ModelUsuario.findOne(filter);
 
     //actualizar el usuario
     ProUpdatePass(u, 'lalocal');

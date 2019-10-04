@@ -5,7 +5,7 @@ const LibValidacion = require("../../lib/LibValidacion");
 
 const ApiLoginEmailPass = async (req, res) => {
 
-  console.log("reqbody", req.body);
+
 
   const email = req.body.email || null;
   const password = req.body.password || null;

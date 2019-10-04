@@ -3,7 +3,7 @@
     "nombre": "david huerta",
     "nick": "davidh",
     "email": "david@productividadti.com.mx",
-    "password": "",
+    "password": "$2a$04$/HlaxT2BP2gOL/myDlTVFOj1E2QyyF3jbpZLzYXKG4N4f3i93Qibm",
     "is_admin": true
   }
 ]
