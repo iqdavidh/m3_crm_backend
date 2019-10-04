@@ -45,7 +45,7 @@ UsuarioSchema.methods.getDataApi = function () {
   };
 };
 
-let listaCamposAllowJSON=['_id','nick','nombre','email']
+let listaCamposAllowJSON=['_id','nick','nombre','email'];
 UsuarioSchema.methods.toJSON=function(){
 
   let model={};
