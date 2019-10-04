@@ -36,7 +36,7 @@ const LoginEmailPassAction = async (req, res) => {
 
   const dataRespuesta = {
     token,
-    public: dataApi.public
+    public_data: dataApi.public
   };
 
   BuilderJsonResponse.Success(res, dataRespuesta);
