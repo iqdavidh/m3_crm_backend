@@ -8,7 +8,7 @@ const itemsXPage = 50;
 const ClienteIndexAction = async (req, res) => {
 
   const id_usuario = req.idUsuario;
-  const pagina = req.pagina;
+  const pagina = parseInt( req.params.pagina);
 
 
   const promTotal = DbCrm.ModelCliente.countDocuments({id_usuario});
@@ -23,7 +23,14 @@ const ClienteIndexAction = async (req, res) => {
       .then((values) => {
 
         const total = values[0];
-        const clientes = values[1];
+        const lista = values[1];
+
+        //esto es porque en el fornt esta como id_cliente
+        let clientes=lista.map(c=>{
+          let m=c.toJSON();
+          m.id_cliente=c._id.toString();
+          return m;
+        });
 
         const numTotalPaginas = Math.ceil(total / itemsXPage);
 

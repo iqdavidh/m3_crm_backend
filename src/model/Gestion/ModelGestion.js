@@ -11,12 +11,6 @@ const GestionSchema = new Schema({
   id_cliente: {type: String, require: true},
   usuario: {type: String, trim: true},
   comentario: {type: String, trim: true},
-},{
-  toJSON: {
-    transform: function (doc, ret) {
-      delete ret._id;
-    }
-  }
 });
 
 module.exports = mongoose.model('gestions', GestionSchema);

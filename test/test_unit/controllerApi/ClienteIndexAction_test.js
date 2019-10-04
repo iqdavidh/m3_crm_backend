@@ -16,7 +16,7 @@ describe('ClienteIndex ok', function () {
     });
 
     request.idUsuario=DataTest.id_usuario;
-    request.pagina=1;
+    request.params.pagina=1;
 
     const response = httpMocks.createResponse();
 

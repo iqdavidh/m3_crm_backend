@@ -6,7 +6,7 @@ const DbCrm = require("../model/DbCrm");
 const ClienteAllDataAction = async (req, res) => {
 
   const idUsuario = req.idUsuario;
-  const idCliente = req.idCliente;
+  const idCliente = req.params.idCliente;
 
   const promCliente = DbCrm.ModelCliente.findById(idCliente);
   const promListaGestion = DbCrm.ModelGestion
@@ -22,7 +22,7 @@ const ClienteAllDataAction = async (req, res) => {
 
         let data = cliente.toJSON();
 
-        data._id=cliente._id.toString();
+        data.id_cliente=cliente._id.toString();
         data.gestion={
           listaSeguimiento,
           listaTarea:[],

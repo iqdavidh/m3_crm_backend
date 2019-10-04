@@ -16,7 +16,7 @@ describe('ClienteAllDataAction ok', function () {
     });
 
     request.idUsuario = DataTest.id_usuario;
-    request.idCliente = DataTest.id_cliente;
+    request.params.idCliente = DataTest.id_cliente;
 
 
     const respuestaHTTP = httpMocks.createResponse();
