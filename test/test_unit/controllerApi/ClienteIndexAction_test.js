@@ -24,11 +24,16 @@ describe('ClienteIndex ok', function () {
 
     assert(response._isJSON() === true, "No es json");
 
-    const data = response._getJSONData();
+    const respuesta = response._getJSONData();
 
-    assert( data.success === true, "Se esperaba respuesta success");
-    assert( data.msg === "", "El menssaje no es el correcto");
-    assert(200 === response.statusCode, "El estatus no es 200")
+    assert( respuesta.success === true, "Se esperaba respuesta success");
+    assert( respuesta.msg === "", "El menssaje no es el correcto");
+    assert(200 === response.statusCode, "El estatus no es 200");
+
+    assert(respuesta.data.total>0, "Falta el total");
+    assert(respuesta.data.numTotalPaginas>0, "Falta el numTotalPaginas");
+    assert(respuesta.data.clientes.length, "Falta el clientes");
+
 
 
   });

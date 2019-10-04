@@ -11,8 +11,16 @@ const ModelCliente = new Schema({
   tel: {type: String, trim: true},
   origen: {type: String, trim: true},
   email1: {type: String, trim: true},
+  sexo: {type: String, trim: true},
   id_usuario: {type: String},
   indicadores: {funelIndex: {type: Number, min: 1, max: 4}}
+},{
+  toJSON: {
+    transform: function (doc, ret) {
+      delete ret._id;
+    }
+  }
+
 });
 
 module.exports = mongoose.model('clientes', ModelCliente);

@@ -42,9 +42,18 @@ UsuarioSchema.methods.getDataApi = function () {
       email:this.email,
       is_admin: this.is_admin
     }
-
   };
 };
 
+let listaCamposAllowJSON=['_id','nick','nombre','email']
+UsuarioSchema.methods.toJSON=function(){
+
+  let model={};
+  listaCamposAllowJSON.forEach(c=>{
+    model[c] = this[c];
+  });
+
+  return model;
+};
 
 module.exports = mongoose.model('usuarios', UsuarioSchema);
