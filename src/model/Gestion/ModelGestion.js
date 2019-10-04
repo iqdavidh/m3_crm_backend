@@ -6,7 +6,10 @@ const ObjectId = Schema.Types.ObjectId;
 
 const GestionSchema = new Schema({
   fecha: {type: Date},
+  id_tipo: {type: String},
   tipo: {type: String},
+  subtipo: {type: String},
+  contactado: {type: String},
   id_usuario: {type: String, require: true},
   id_cliente: {type: String, require: true},
   usuario: {type: String, trim: true},

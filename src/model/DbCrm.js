@@ -40,5 +40,5 @@ module.exports = {
   cx,
   ModelUsuario: ModelUsuario,
   ModelCliente: ModelCliente,
-  ModelGestion:ModelGestion
+  ModelGestion: ModelGestion
 };
