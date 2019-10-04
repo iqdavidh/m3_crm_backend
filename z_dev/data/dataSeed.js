@@ -58,6 +58,8 @@ let fecha = new Date();
 let maxIndexCom = listaCom.length;
 let maxTipoSeg = TipoSeguimiento.length;
 
+let idUsuario=null;
+
 DbCrm.ModelGestion.remove({})
     .then(respuesta => {
 
@@ -67,10 +69,11 @@ DbCrm.ModelGestion.remove({})
     })
     .then(usuario => {
       console.log('idUsuario', usuario);
-      DbCrm.ModelCliente.updateMany({}, {id_usuario: usuario._id.toString()});
-      return usuario._id.toString();
+
+      idUsuario= usuario._id.toString();
+    //  return DbCrm.ModelCliente.updateMany({}, {id_usuario: idUsuario});
     })
-    .then(idUsuario => {
+    .then(nodata => {
 
       DbCrm.ModelCliente.find({})
           .then(lista => {
