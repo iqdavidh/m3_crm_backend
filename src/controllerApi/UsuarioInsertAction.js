@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const BuilderJsonResponse = require("../lib/BuilderJsonResponse");
 const DbCrm = require("../model/DbCrm");
 const LibValidacion = require("../lib/LibValidacion");
-const ProUpdatePass = require("../model/Usuario/ProUpdatePass");
+
 
 let listaCamposPermitirUpdate = [
   'nombre', 'nick', 'email', 'is_admin', 'is_activo'
@@ -19,7 +19,6 @@ const UsuarioInsertAction = async (req, res) => {
   dataClean.password = bcrypt.hashSync(dataRaw.password, 1);
 
 
-  //buscar si es el superusuario
   await DbCrm.ModelUsuario
       .create(dataClean)
       .then(u => {

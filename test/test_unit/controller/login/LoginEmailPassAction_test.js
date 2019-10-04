@@ -2,13 +2,15 @@
 
 const assert = require('assert');
 const httpMocks = require('node-mocks-http');
-const action = require('./../../../../src/controllerApi/login/ApiLoginEmailPass');
+const action = require('./../../../../src/controller/login/LoginEmailPassAction');
 
 
 /*
 Las ruteas de api requieren el JWT
 * */
 describe('ApiLoginEmailPass', async function () {
+
+  this.timeout(5000);
 
   it("POST / - login con datos correctos", async function () {
 

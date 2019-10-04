@@ -3,7 +3,7 @@ const DbCrm = require("../../model/DbCrm");
 const EncodeObject = require('../../../src/pro/jwt/EncodeObject');
 const LibValidacion = require("../../lib/LibValidacion");
 
-const ApiLoginEmailPass = async (req, res) => {
+const LoginEmailPassAction = async (req, res) => {
 
 
 
@@ -43,4 +43,4 @@ const ApiLoginEmailPass = async (req, res) => {
 
 };
 
-module.exports = ApiLoginEmailPass;
+module.exports = LoginEmailPassAction;

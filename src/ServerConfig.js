@@ -10,8 +10,8 @@ const ServerConfig = {
     pass: "lalocal",
   },
   back: {
-    port:3000,
-    url: "http://localhost:3000"
+    port:3004,
+    url: "http://localhost:3004"
   },
   jwtSecret:"unsaltsegurode16characters"
 };

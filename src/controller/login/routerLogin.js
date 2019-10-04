@@ -1,7 +1,9 @@
 const express = require('express');
 const routerLogin = express.Router();
-const actionApiLog = require("./ApiLoginEmailPass");
+const LoginEmailPassAction = require("./LoginEmailPassAction");
+const RegistrarseAction = require("./RegistrarseAction");
 
-routerLogin.post('/login', actionApiLog);
+routerLogin.post('/login', LoginEmailPassAction);
+routerLogin.post('/registrarse', RegistrarseAction);
 
 module.exports = routerLogin;
