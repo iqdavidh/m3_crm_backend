@@ -9,6 +9,7 @@ const ClienteUpdateAction = require("./ClienteUpdateAction");
 const ClienteInsertAction = require("./ClienteInsertAction");
 const SeguimientoInsertAction = require("./SeguimientoInsertAction");
 const UsuarioIndexAction = require("./UsuarioIndexAction");
+const UsuarioUpdateAction = require("./UsuarioUpdateAction");
 
 
 routerApi.use(autMiddle);
@@ -20,6 +21,7 @@ routerApi.post('/cliente_insert', ClienteInsertAction);
 routerApi.get('/cliente/:idCliente', ClienteAllDataAction);
 routerApi.post('/seguimiento_insert', SeguimientoInsertAction);
 routerApi.get('/usuario_index', UsuarioIndexAction);
+routerApi.post('/usuario_update/:idUsuario', UsuarioUpdateAction);
 
 
 module.exports = routerApi;
