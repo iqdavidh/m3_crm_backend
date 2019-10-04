@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 const httpMocks = require('node-mocks-http');
-const ClienteIndexAction = require("../../../src/controller/ClienteIndexAction");
+const ClienteIndexAction = require("../../../src/controllerApi/ClienteIndexAction");
 const DataTest = require("../DataTest");
 
 describe('ClienteIndex ok', function () {

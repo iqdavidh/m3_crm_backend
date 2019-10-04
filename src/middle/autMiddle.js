@@ -4,7 +4,7 @@ const BuilderJsonResponse = require("../lib/BuilderJsonResponse");
 
 const autMiddle = (req, res, next) => {
 
-  let token = req.headers['x-access-token'] || req.headers['authorization']; // Express headers are auto converted to lowercase
+  let token = req.headers['x-crm-token'] || req.headers['authorization']; // Express headers are auto converted to lowercase
 
   if (!token) {
     return BuilderJsonResponse.Error(res,"Acceso no autorizado, se requiere ingresar al sistema en login", 401)
@@ -21,6 +21,7 @@ const autMiddle = (req, res, next) => {
 
     /*Datos del token  _id, nombre,  roles* */
     req.usuario = DecodeToken(token);
+    req.idUsuario=req.usuario._id;
     next();
 
   } catch (e) {
