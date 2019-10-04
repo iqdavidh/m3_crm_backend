@@ -33,10 +33,12 @@ const cx = mongoose.connect(url, opcionesMongoose)
 
 const ModelUsuario = require("./Usuario/ModelUsuario");
 const ModelCliente = require("./Cliente/ModelCliente");
+const ModelGestion = require("./Gestion/ModelGestion");
 
 
 module.exports = {
   cx,
   ModelUsuario: ModelUsuario,
-  ModelCliente: ModelCliente
+  ModelCliente: ModelCliente,
+  ModelGestion:ModelGestion
 };

@@ -11,7 +11,7 @@ const UsuarioSchema = new Schema({
   email: {type: String, require: true, trim: true, unique: 1},
   nombre: {type: String, require: true},
   password: {type: String, require: true, minlength: 6},
-  roles: {type: Array, required: true},
+  is_admin: {type: Boolean, required: true},
   fum: {type: Date},
   intentosLogin: {type: Number},
   fuLogintry: {type: Date}

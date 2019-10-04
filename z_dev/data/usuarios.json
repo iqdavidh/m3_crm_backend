@@ -3,10 +3,6 @@
     "nombre": "davidh",
     "email": "david@productividadti.com.mx",
     "password": "",
-    "roles": [
-      {
-        "is_admin": 1
-      }
-    ]
+    "is_admin": true
   }
 ]
