@@ -1,19 +1,19 @@
 'use strict';
-require('dotenv').config();
+
 
 
 const ServerConfig = {
-  tipoServer: process.env.NODE_ENV ,
+  tipoServer: "development" ,
   mongo: {
-    urlServer: process.env.MONGO_URL_ROOT_CX,
-    user: process.env.MONGO_USER,
-    pass: process.env.MONGO_PASS,
+    urlServer: "mongodb://localhost:27017",
+    user: "davidh",
+    pass: "lalocal",
   },
   back: {
-    port: process.env.BACK_PORT,
-    url: process.env.BACK_URL
+    port:3000,
+    url: "http://localhost:3000"
   },
-  jwtSecret:process.env.JWT_SECRET
+  jwtSecret:"unsaltsegurode16characters"
 };
 
 

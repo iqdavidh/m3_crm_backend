@@ -12,7 +12,8 @@
     "test_unit": "mocha test/test_unit/**/*.js",
     "test_unit_basic": "mocha test/test_unit/basic_test.js",
     "report-coverage": "nyc report --reporter=text-lcov >  coverage.lcov && codecov",
-    "dataseed": "mongoimport --db crm --collection usuarios --file z_dev/data/usuarios.json --jsonArray"
+    "dataseed1": "mongoimport --db crm --collection usuarios --file z_dev/data/usuarios.json --jsonArray",
+    "dataseed2": "mongoimport --db crm --collection clientes --file z_dev/data/clientes.json --jsonArray"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

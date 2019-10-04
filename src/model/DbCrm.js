@@ -8,7 +8,7 @@ let opcionesMongoose = {
   useNewUrlParser: true
 };
 
-if (ServerConfig.tipoServer!=='development') {
+if (ServerConfig.tipoServer !== 'development') {
   const user = encodeURIComponent(ServerConfig.mongo.user);
   const password = encodeURIComponent(ServerConfig.mongo.pass);
   url = `mongodb://${user}:${password}@localhost:27017`;
@@ -31,10 +31,12 @@ const cx = mongoose.connect(url, opcionesMongoose)
     });
 
 
- const ModelUsuario = require("./Usuario/ModelUsuario");
+const ModelUsuario = require("./Usuario/ModelUsuario");
+const ModelCliente = require("./Cliente/ModelCliente");
 
 
 module.exports = {
   cx,
-  ModelUsuario: ModelUsuario
+  ModelUsuario: ModelUsuario,
+  ModelCliente: ModelCliente
 };
