@@ -5,32 +5,41 @@ const itemsXPage = 50;
 
 
 /* Buscar todos los clientes del usuario*/
-const ClienteIndexAction = async  (req, res) =>{
+const ClienteIndexAction = async (req, res) => {
 
   const id_usuario = req.idUsuario;
   const pagina = req.pagina;
 
 
-  let dataResult = {
-    id_usuario: id_usuario
-  };
+  const promTotal = DbCrm.ModelCliente.countDocuments({id_usuario});
+  const promLista = DbCrm.ModelCliente
+      .find({id_usuario})
+      .limit(itemsXPage)
+      .skip(itemsXPage * (pagina - 1))
+      .exec()
+  ;
 
-  DbCrm.ModelCliente.countDocuments({id_usuario})
-      .then(numTotal => {
+  await Promise.all([promTotal, promLista])
+      .then((values) => {
 
-        dataResult.total = numTotal;
-        dataResult.numTotalPaginas = Math.ceil(numTotal / itemsXPage);
+        const total = values[0];
+        const clientes = values[1];
 
-        return DbCrm.ModelCliente
-            .find({id_usuario})
-            .limit(itemsXPage)
-            .skip(itemsXPage * (pagina - 1));
+        const numTotalPaginas = Math.ceil(total / itemsXPage);
+
+        let data = {
+          total,
+          numTotalPaginas,
+          pagina,
+          clientes
+        };
+
+        BuilderJsonResponse.Success(res, data);
+
       })
-      .then(lista => {
+      .catch(error => {
 
-        dataResult.clientes = lista;
-
-        BuilderJsonResponse.Success(res, dataResult);
+        BuilderJsonResponse.Error(res, error);
       });
 
 

@@ -8,8 +8,9 @@ const Schema = mongoose.Schema;
 
 
 const UsuarioSchema = new Schema({
-  email: {type: String, require: true, trim: true, unique: 1},
   nombre: {type: String, require: true},
+  nick: {type: String, require: true},
+  email: {type: String, require: true, trim: true, unique: 1},
   password: {type: String, require: true, minlength: 6},
   is_admin: {type: Boolean, required: true},
   fum: {type: Date},
