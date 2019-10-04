@@ -17,12 +17,13 @@ const ClienteUpdateAction = async (req, res) => {
   const idCliente = req.params.idCliente;
 
   let dataRaw = req.body;
-  let dataClean = LibValidacion.getDataClean(dataRaw, listaCamposPermitirUpdate);
+  let dataClean = LibValidacion.getDataClean(dataRaw, listaCamposPermitirUpdate, false);
 
+  //Hacemos la conversion del los campos tipo obnject
 
-  if (dataRaw.indicadores && dataRaw.indicadores.funelIndex) {
+  if (dataRaw["indicadores.funelIndex"]) {
     dataClean.indicadores = {
-      funelIndex: dataRaw.indicadores.funelIndex
+      funelIndex: dataRaw["indicadores.funelIndex"]
     }
   }
 

@@ -1,6 +1,6 @@
 const LibValidacion = {
 
-  getDataClean: (dataRaw, listaCamposAllow) => {
+  getDataClean: (dataRaw, listaCamposAllow,isLanzaExcepcionSiNoHayDatos=true) => {
     let dataClean = {};
 
     let contadorCampos = 0;
@@ -14,7 +14,7 @@ const LibValidacion = {
         })
     ;
 
-    if (contadorCampos === 0) {
+    if (isLanzaExcepcionSiNoHayDatos && contadorCampos === 0) {
       throw new Error("No se encontraron datos requeridos");
     }
 
