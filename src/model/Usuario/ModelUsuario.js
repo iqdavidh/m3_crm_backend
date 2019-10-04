@@ -12,7 +12,8 @@ const UsuarioSchema = new Schema({
   nick: {type: String, require: true},
   email: {type: String, require: true, trim: true, unique: 1},
   password: {type: String, require: true, minlength: 6},
-  is_admin: {type: Boolean, required: true},
+  is_admin: {type: Boolean},
+  is_activo: {type: Boolean},
   fum: {type: Date},
   intentosLogin: {type: Number},
   fuLogintry: {type: Date}
@@ -45,15 +46,5 @@ UsuarioSchema.methods.getDataApi = function () {
   };
 };
 
-let listaCamposAllowJSON=['_id','nick','nombre','email'];
-UsuarioSchema.methods.toJSON=function(){
-
-  let model={};
-  listaCamposAllowJSON.forEach(c=>{
-    model[c] = this[c];
-  });
-
-  return model;
-};
 
 module.exports = mongoose.model('usuarios', UsuarioSchema);
