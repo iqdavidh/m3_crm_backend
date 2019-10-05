@@ -3,15 +3,16 @@
 
 
 const ServerConfig = {
-  tipoServer: "aws" ,
+  tipoServer: "atlas" ,
   mongo: {
-    urlServer: "mongodb://localhost:27017",
+    urlServer: "cursomu-g9wsf.mongodb.net/crm",
     user: "iron",
-    pass: "iron",
+    pass: "d4v1dhu3rt4",
+    url:'mongodb+srv://iron:d4v1dhu3rt4@cursomu-g9wsf.mongodb.net/crm?retryWrites=true&w=majority'
   },
   back: {
     port:3004,
-    url: "http://52.37.165.46:3004"
+    url: "http://54.201.211.232:3004"
   },
   jwtSecret:"unsaltsegurode16characters"
 };

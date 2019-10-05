@@ -9,9 +9,7 @@ let opcionesMongoose = {
 };
 
 if (ServerConfig.tipoServer !== 'development') {
-  const user = encodeURIComponent(ServerConfig.mongo.user);
-  const password = encodeURIComponent(ServerConfig.mongo.pass);
-  url = `mongodb://${user}:${password}@localhost:27017`;
+  url = ServerConfig.mongo.url;
 }
 
 url = url + '/crm';

@@ -58,61 +58,41 @@ let fecha = new Date();
 let maxIndexCom = listaCom.length;
 let maxTipoSeg = TipoSeguimiento.length;
 
-let idUsuario=null;
-
-DbCrm.ModelGestion.remove({})
-    .then(respuesta => {
-
-      console.log(respuesta);
-      return DbCrm.ModelUsuario.findOne({email});
-
-    })
-    .then(usuario => {
-      console.log('idUsuario', usuario);
-
-      idUsuario= usuario._id.toString();
-    //  return DbCrm.ModelCliente.updateMany({}, {id_usuario: idUsuario});
-    })
-    .then(nodata => {
-
-      DbCrm.ModelCliente.find({})
-          .then(lista => {
-
-            lista.forEach(c => {
-
-              let idCliente = c._id.toString();
-
-              console.log(`idCliente ${idCliente} ------------`);
+let idUsuario = "5d97ff8b66d6af1750e4e08d";
 
 
-              let numGestion = getRandomInt(5);
-              numGestion = numGestion > 2 ? numGestion : 0;
+DbCrm.ModelCliente.find({})
+    .then(lista => {
+
+      lista.forEach(c => {
+
+        let idCliente = c._id.toString();
+
+        console.log(`idCliente ${idCliente} ------------`);
 
 
-              for (let i = 0; i < numGestion; i++) {
+        let numGestion = getRandomInt(5);
+        numGestion = numGestion > 2 ? numGestion : 0;
 
-                let indexTipoSeg = getRandomInt(maxTipoSeg) - 1;
-                let indexCom = getRandomInt(maxIndexCom) - 1;
 
-                let dataInsert = {
-                  fecha: fecha,
-                  tipo: TipoSeguimiento[indexTipoSeg].subtipo,
-                  id_usuario: idUsuario,
-                  id_cliente: idCliente,
-                  usuario: "davidh",
-                  comentario: listaCom[indexCom]
-                };
+        for (let i = 0; i < numGestion; i++) {
 
-                return DbCrm.ModelGestion.create(dataInsert);
-              }
+          let indexTipoSeg = getRandomInt(maxTipoSeg) - 1;
+          let indexCom = getRandomInt(maxIndexCom) - 1;
 
-            });
+          let dataInsert = {
+            fecha: fecha,
+            tipo: TipoSeguimiento[indexTipoSeg].subtipo,
+            id_usuario: idUsuario,
+            id_cliente: idCliente,
+            usuario: "davidh",
+            comentario: listaCom[indexCom]
+          };
 
-          })
-      ;
+          return DbCrm.ModelGestion.create(dataInsert);
+        }
+
+      });
 
     })
-
 ;
-
-
